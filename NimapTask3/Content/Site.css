@@ -1,0 +1,70 @@
+﻿/* General Body Styling */
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif; /* Changed font-family for a different look */
+   /* background-color: #f5deb3; /* Light background for a clean layout */
+}
+
+
+/* Header Styling */
+#header {
+    display: flex; /* Use flexbox to align logo and text horizontally */
+    align-items: center; /* Vertically center the items */
+    background-color: #bobec5;
+    /* Slightly darker header color */
+    color: #ffffff;
+    padding: 20px 30px; /* Adjusted padding for different dimensions */
+    height: 170px; /* Adjusted height for the header */
+}
+
+
+
+.header-text {
+    text-align: center; /* Centered text */
+    flex-grow: 1; /* Allow text to take remaining space */
+}
+
+.title {
+    font-size: 30px; /* Adjusted title font size */
+    margin: 0; /* Remove default margin */
+}
+
+.description {
+    font-size: 18px; /* Adjusted description font size */
+    margin: 0; /* Remove default margin */
+}
+
+/* Footer Styling */
+#footer {
+    background-color: #bobec5; /* Consistent color with header */
+    color: #37474; /* Changed text color */
+    padding: 20px;
+    text-align: center;
+    font-size: 14px; /* Smaller footer font size */
+}
+
+/* Tablet View (Medium Screen) */
+@media (max-width: 768px) {
+    #header {
+        padding: 25px; /* Adjusted padding for tablet view */
+    }
+
+    .content {
+        padding: 25px; /* Adjusted padding for tablet view */
+    }
+}
+
+/* Mobile View (Small Screen) */
+@media (max-width: 480px) {
+    #header {
+        font-size: 18px; /* Adjusted font size for mobile view */
+    }
+
+    .content {
+        padding: 20px; /* Adjusted padding for mobile view */
+    }
+
+    #footer {
+        font-size: 12px; /* Adjusted font size for mobile view */
+    }
+}

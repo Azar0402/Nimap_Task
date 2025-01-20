@@ -1,0 +1,111 @@
+﻿@model NimapTask3.Models.Product
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div class="form-container">
+    <h2>Delete Product</h2>
+    <p>Are you sure you want to delete this product?</p>
+
+    <div>
+        <h4>Product Name: @Model.ProductName</h4>
+        <h4>Category: @Model.Category.CName</h4>
+    </div>
+
+    <!-- POST form to DeleteConfirmed action -->
+    @using (Html.BeginForm("DeleteConfirmed", "Product", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("id", Model.ProductId) <!-- Pass the ProductId explicitly -->
+        <button type="submit" class="btn btn-danger">Delete</button>
+    }
+
+    <br /><br />
+    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-secondary" })
+</div>
+
+
+
+<style>
+    /* Body and overall page styling */
+    body {
+        font-family: 'Lato', sans-serif; /* New font-family */
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Dark gradient background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    /* Form container styling */
+    .form-container {
+        background-color: #eceff1; /* Light grey background */
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        padding: 45px; /* Increased padding */
+        width: 100%;
+        max-width: 500px; /* Slightly larger max-width */
+    }
+
+        /* Form heading */
+        .form-container h2 {
+            font-size: 1.8rem; /* Adjusted font size */
+            font-weight: 700; /* Bolder text */
+            text-align: center;
+            color: #37474f; /* Darker text */
+            margin-bottom: 25px; /* Adjusted margin */
+        }
+
+    /* Form group styling */
+    .form-group {
+        margin-bottom: 18px; /* Adjusted margin */
+    }
+
+        .form-group label {
+            font-size: 1rem; /* Adjusted font size */
+            color: #607d8b; /* Grey text */
+            display: block;
+            margin-bottom: 6px; /* Adjusted margin */
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px; /* Adjusted padding */
+            font-size: 1rem;
+            border: 2px solid #cfd8dc; /* Grey border */
+            border-radius: 6px; /* Slightly rounded corners */
+            background-color: #eceff1; /* Light grey background */
+            transition: border-color 0.3s ease;
+        }
+
+            .form-group input:focus {
+                border-color: #0f2027; /* Dark border */
+                outline: none;
+                box-shadow: 0 0 6px rgba(15, 32, 39, 0.4); /* Subtle shadow */
+            }
+
+    /* Button styling */
+    .btn {
+        width: 100%;
+        padding: 12px; /* Adjusted padding */
+        background-color: #0f2027; /* Dark button color */
+        color: #eceff1; /* Light text */
+        border: none;
+        border-radius: 6px; /* Slightly rounded corners */
+        font-size: 1rem; /* Adjusted font size */
+        font-weight: 700; /* Bolder text */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn:hover {
+            background-color: #1c313a; /* Hover color */
+        }
+
+        .btn:focus {
+            outline: none;
+            box-shadow: 0 0 6px rgba(15, 32, 39, 0.4); /* Subtle shadow */
+        }
+</style>

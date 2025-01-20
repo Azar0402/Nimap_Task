@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="header">
+        <div class="header-text">
+            <div class="title">Nimpap Infotech</div>
+            <div class="description">Your trusted technology partner</div>
+        </div>
+        @Html.ActionLink("Go To Home", "Home", "Product", null, new { @class = "btn btn-success" })
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        @RenderBody()
+    </div>
+
+    <!-- Footer Section -->
+    <div id="footer">
+        <p>&copy;2025 Nimap Infotech.<br /><br />All rights reserverd</p>
+
+        <p>Project By : Azar Shaikh</p>
+    </div>
+</body>
+</html>

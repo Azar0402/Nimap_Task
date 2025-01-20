@@ -1,0 +1,84 @@
+﻿@model NimapTask3.Models.Product
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div class="form-container">
+
+    <h2>Product Details</h2>
+    <div>
+        <h4>Product ID: @Model.ProductId</h4>
+        <h4>Product Name: @Model.ProductName</h4>
+        <h4>Category: @Model.Category.CName</h4>
+    </div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+</div>
+
+<style>
+    /* General page styling */
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #9b4dca, #f06292, #f44336);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    /* Form container */
+    .form-container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        width: 100%;
+        max-width: 480px;
+    }
+
+        /* Form headings */
+        .form-container h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-container h4 {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+    /* Anchor link/button */
+    .btn {
+        width: 100%;
+        padding: 14px;
+        background-color: #9b4dca;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+        .btn.btn-secondary {
+            background-color: #6c757d;
+        }
+
+        .btn:hover {
+            background-color: #7c3e8e;
+        }
+
+        .btn:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(155, 77, 202, 0.4);
+        }
+</style>
